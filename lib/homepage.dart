@@ -28,7 +28,7 @@ class _homepageState extends State<homepage> {
       ),
       body: tasks.length == 0
           ? Center(
-              child: Text("No Task to do"),
+              child: Text("No Task to show"),
             )
           : ListView.builder(
               itemCount: tasks.length,
@@ -62,23 +62,24 @@ class _homepageState extends State<homepage> {
                                       children: [Text("Are you sure?")],
                                     ),
                                     actions: [
-                                       RaisedButton(
-                                          child: Text("No"),
-                                          onPressed: () {
-                                            setState(() {
-                                              
-                                            });
-                                            Navigator.of(context).pop();
-                                          },color: Colors.green,
-                                          ),
                                       RaisedButton(
-                                          child: Text("Yes"),
-                                          onPressed: () {
-                                            setState(() {
-                                              tasks.removeAt(index);
-                                            });
-                                            Navigator.of(context).pop();
-                                          },color: Colors.red,),
+                                        child: Text("No"),
+                                        onPressed: () {
+                                          setState(() {});
+                                          Navigator.of(context).pop();
+                                        },
+                                        color: Colors.green,
+                                      ),
+                                      RaisedButton(
+                                        child: Text("Yes"),
+                                        onPressed: () {
+                                          setState(() {
+                                            tasks.removeAt(index);
+                                          });
+                                          Navigator.of(context).pop();
+                                        },
+                                        color: Colors.red,
+                                      ),
                                     ],
                                   );
                                 });
@@ -118,13 +119,11 @@ class _homepageState extends State<homepage> {
                           Navigator.of(context).pop();
                         },
                         color: Colors.green,
-                      ),    
+                      ),
                       RaisedButton(
                         child: Text("Close"),
                         onPressed: () {
-                          setState(() {
-                            
-                          });
+                          setState(() {});
                           Navigator.of(context).pop();
                         },
                         color: Colors.blue,
